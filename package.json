@@ -1,0 +1,21 @@
+{
+  "name": "azure-iot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "start.js",
+  "scripts": {
+    "test": "npm -s run lint"
+  },
+  "author": "daniel.strebel@gmail.com",
+  "license": "MIT",
+  "dependencies": {
+    "amqp10": "^3.4.0",
+    "azure-iot-device": "^1.1.5",
+    "azure-iot-device-mqtt": "^1.1.5",
+    "azure-iothub": "^1.1.5"
+  },
+  "devDependencies": {
+    "@types/node": "^7.0.4",
+    "jshint": "^2.9.2"
+  }
+}
