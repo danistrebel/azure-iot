@@ -10,6 +10,7 @@
   "license": "MIT",
   "dependencies": {
     "amqp10": "^3.4.0",
+    "azure-event-hubs": "0.0.6",
     "azure-iot-device": "^1.1.5",
     "azure-iot-device-mqtt": "^1.1.5",
     "azure-iothub": "^1.1.5"

@@ -18,8 +18,6 @@ export class AzureIotWindow implements AzureDevice {
 
     constructor(connectionString: string) {
 
-        console.log(connectionString);
-
         this.client = clientFromConnectionString(connectionString);
 
         this.client.open((err: any) => {

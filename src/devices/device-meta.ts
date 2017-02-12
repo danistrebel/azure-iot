@@ -1,4 +1,4 @@
-import { AzureDeviceStatic, AzureIotWindowStatic} from './index';
+import { AzureDeviceStatic, AzureIotWindowStatic, AzureIotMessageLoggerStatic, AzureIotTemperatureSensorStatic } from './index';
 
 export interface DeviceMappingEntry {
     deviceType: string;
@@ -6,7 +6,9 @@ export interface DeviceMappingEntry {
 }
 
 const allTypes: AzureDeviceStatic[] = [
-    AzureIotWindowStatic
+    AzureIotWindowStatic,
+    AzureIotMessageLoggerStatic,
+    AzureIotTemperatureSensorStatic
 ]
 
 export const DeviceTypeRegistry = {
