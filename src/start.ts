@@ -14,7 +14,9 @@ const deviceConfig: devices.DeviceMappingEntry[] =  [{
 
 
 if(process.argv.length < 4) {
-    console.error("HostName and Registry Access Key");
+    console.error("Missing Azuure IOT Hub Parameters:");
+    console.error("[1] HostName");
+    console.error("[2] Registry Access Key");
 } else {
     let hostName = process.argv[2]
     let registryAccessKey = process.argv[3];
@@ -25,8 +27,10 @@ if(process.argv.length < 4) {
 
     deviceConfig.forEach(d => {
         let deviceCreator = startDevice(hostName, d.deviceType);
+        //Try to get an existing device from the registry
         registry.get(d.deviceId, (err, deviceInfo) => {
             if(err) {
+                //Create the device if it is new
                 let device = new iothub.Device(null);
                 device.deviceId = d.deviceId;
                 registry.create(device, deviceCreator);

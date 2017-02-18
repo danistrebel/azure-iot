@@ -11,6 +11,9 @@ export const AzureIotTemperatureSensorStatic: AzureDeviceStatic = {
 
 }
 
+/**
+ * Temperature Sensor
+ */
 export class AzureIotTemperatureSensor implements AzureDevice {
     
     constructor(connectionString: string) {
@@ -21,6 +24,7 @@ export class AzureIotTemperatureSensor implements AzureDevice {
              if (err) {
                 console.error('Could not connect: ' + err.message);
             } else {
+
                 setInterval(() => {
                     let fakeTemperature = 19 + (Math.random() * 5);
                     let msg = new Message(JSON.stringify({deviceId: 'temp', temperature: fakeTemperature}));
